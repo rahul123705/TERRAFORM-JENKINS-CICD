@@ -20,7 +20,7 @@ resource "aws_s3_bucket_acl" "example" {
     aws_s3_bucket_ownership_controls.example,
     aws_s3_bucket_public_access_block.example,
   ]
-  bucket = aws_s3_bucket.mybucket.id
+  bucket = aws_s3_bucket.example.id
   acl    = "public-read"
 }
 resource "aws_s3_object" "index" {
@@ -59,5 +59,5 @@ resource "aws_s3_bucket_website_configuration" "website" {
   error_document {
     key = "error.html"
   }
-  depends_on = [ aws_s3_bucket_acl.example.id ]
+  depends_on = [aws_s3_bucket_acl.example]
 }
