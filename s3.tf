@@ -8,7 +8,7 @@ resource "aws_s3_bucket_ownership_controls" "example" {
     object_ownership = "BucketOwnerPreferred"
   }
 }
-resource "aws_s3_bucket_public_access_block" "example" {
+resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.mybucket.id
   block_public_acls       = false
   block_public_policy     = false
