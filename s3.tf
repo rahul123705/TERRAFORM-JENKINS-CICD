@@ -52,12 +52,12 @@ resource "aws_s3_object" "script" {
   content_type = "text/javascript"
 }
 resource "aws_s3_bucket_website_configuration" "website" {
-  bucket = aws_s3_bucket.mybucket.id
+  bucket = aws_s3_bucket.example.id
   index_document {
     suffix = "index.html"
   }
   error_document {
     key = "error.html"
   }
-  depends_on = [ aws_s3_bucket_acl.example.id ]
+  depends_on = [aws_s3_bucket_acl.example]
 }
