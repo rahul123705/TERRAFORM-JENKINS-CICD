@@ -9,7 +9,7 @@ resource "aws_s3_bucket_website_configuration" "mybucket" {
 
 
 output "website_endpoint" {
-  value = aws_s3_bucket_website_configuration.mybucket.website_endpoint
+  value = aws_s3_bucket.mybucket-ohio.website_endpoint
 }
 
 
